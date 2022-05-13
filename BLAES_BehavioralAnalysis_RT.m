@@ -116,6 +116,10 @@ all_sessions = cell(0,0);
             %the screen and the time stamp index for the response time period
             %You need to take the first of this value and then divide it by
             %2000 which is our sampling rate
+            %in KD_cell has all the times a keypress could have occurred
+            %and the first cell in KD_cell corresponds to the time stamp
+            %for the first presentation of the image, just not with the
+            %same index, but that's OK, no need to do any subtraction.
             RT_time_stamp = find(KD_cell{1,i});
             if size(RT_time_stamp,1)> 1
                 first_KD = RT_time_stamp(1,1);
